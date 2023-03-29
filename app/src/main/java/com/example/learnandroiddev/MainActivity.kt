@@ -2,35 +2,22 @@ package com.example.learnandroiddev
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
+import com.example.learnandroiddev.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onStart() {
-        super.onStart()
-        println("onStart called")
-    }
-
-    override fun onPostResume() {
-        super.onPostResume()
-        println("onResume called")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        println("onPause called")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        println("onStop called")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        println("onDestroy called")
+        binding.btnAdd.setOnClickListener {}
     }
 }
+
+
